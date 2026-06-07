@@ -1,6 +1,7 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, Star } from "lucide-react";
 import portrait from "@/assets/rithik-portrait.jpg";
+import { useScrolled } from "@/hooks/use-scrolled";
 
 const tags = ["#Branding", "#UI/UX Design", "#Fullstack Developer", "#Web Designer"];
 
