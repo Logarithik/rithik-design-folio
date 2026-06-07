@@ -3,12 +3,13 @@ import { motion } from "framer-motion";
 import portrait from "@/assets/rithik-portrait.jpg";
 
 const links = [
-  { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
-  { href: "#projects", label: "Projects" },
-  { href: "#resume", label: "Resume" },
-  { href: "#contact", label: "Contact" },
+  { href: "#hero", label: "HOME" },
+  { href: "#about", label: "ABOUT" },
+  { href: "#skills", label: "SERVICES" },
+  { href: "#projects", label: "PROJECTS" },
+  { href: "#contact", label: "CONTACT" },
 ];
+
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -44,7 +45,7 @@ export function Nav() {
                 className="h-full w-full rounded-full object-cover"
               />
             </span>
-            <span className="text-gradient text-lg">Rithik</span>
+            <span className="text-gold text-lg tracking-tight">Portfoliyo</span>
           </a>
 
           <nav className="hidden md:flex items-center gap-1">
@@ -52,19 +53,17 @@ export function Nav() {
               <a
                 key={l.href}
                 href={l.href}
-                className="px-4 py-2 rounded-lg text-sm text-muted-foreground hover:text-foreground hover:bg-white/5 transition-colors"
+                className={`px-4 py-2 rounded-lg text-xs font-semibold tracking-wider transition-colors ${
+                  l.label === "HOME"
+                    ? "text-gold"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
               >
                 {l.label}
               </a>
             ))}
           </nav>
 
-          <a
-            href="#contact"
-            className="hidden md:inline-flex items-center gap-2 rounded-xl bg-aurora px-4 py-2 text-sm font-medium text-white shadow-elegant hover:opacity-90 transition"
-          >
-            Let&apos;s talk
-          </a>
 
           <button
             onClick={() => setOpen((v) => !v)}

@@ -9,7 +9,8 @@ export function AnimatedBg() {
           height: 520,
           top: "-10%",
           left: "-8%",
-          background: "radial-gradient(circle, #6366F1, transparent 60%)",
+          background: "radial-gradient(circle, #C9A84C, transparent 60%)",
+          opacity: 0.25,
         }}
       />
       <div
@@ -17,32 +18,11 @@ export function AnimatedBg() {
         style={{
           width: 600,
           height: 600,
-          top: "30%",
+          top: "40%",
           right: "-15%",
-          background: "radial-gradient(circle, #8B5CF6, transparent 60%)",
+          background: "radial-gradient(circle, #F0D78C, transparent 60%)",
           animationDelay: "-6s",
-        }}
-      />
-      <div
-        className="blob animate-blob"
-        style={{
-          width: 480,
-          height: 480,
-          bottom: "-12%",
-          left: "30%",
-          background: "radial-gradient(circle, #EC4899, transparent 60%)",
-          animationDelay: "-12s",
-        }}
-      />
-      <div
-        className="blob animate-blob"
-        style={{
-          width: 420,
-          height: 420,
-          top: "60%",
-          left: "-5%",
-          background: "radial-gradient(circle, #06B6D4, transparent 60%)",
-          animationDelay: "-3s",
+          opacity: 0.18,
         }}
       />
     </div>
