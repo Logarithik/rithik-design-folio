@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, Star } from "lucide-react";
 import portrait from "@/assets/rithik-portrait.jpg";
 
-const tags = ["#Branding", "#UI/UX Design", "#Development", "#Web Design"];
+const tags = ["#Branding", "#UI/UX Design", "#Fullstack Developer", "#Web Designer"];
 
 const testimonials = [
   {
