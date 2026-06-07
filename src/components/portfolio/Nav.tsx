@@ -37,7 +37,12 @@ export function Nav() {
             scrolled ? "glass-strong shadow-soft" : ""
           }`}
         >
-          <a href="#hero" className="flex items-center gap-2 font-display font-semibold">
+          <a
+            href="#hero"
+            className={`flex items-center gap-2 font-display font-semibold transition-all duration-300 ${
+              scrolled ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-2 pointer-events-none"
+            }`}
+          >
             <span className="relative grid h-9 w-9 place-items-center rounded-full bg-aurora p-[2px]">
               <img
                 src={portrait}
@@ -45,7 +50,7 @@ export function Nav() {
                 className="h-full w-full rounded-full object-cover"
               />
             </span>
-            <span className="text-gold text-lg tracking-tight">Portfoliyo</span>
+            <span className="text-gold text-lg tracking-tight">Rithik</span>
           </a>
 
           <nav className="hidden md:flex items-center gap-1">
