@@ -33,25 +33,25 @@ export function Nav() {
           }`}
         >
           <a href="#hero" className="flex items-center gap-2 font-display font-semibold min-h-9">
-            <AnimatePresence>
-              {scrolled && (
-                <motion.span
-                  layoutId="profile-portrait"
-                  className="relative block h-9 w-9 rounded-full overflow-hidden ring-2 ring-gold/60"
-                  transition={{ type: "spring", stiffness: 180, damping: 24 }}
-                >
-                  <img
-                    src={portrait}
-                    alt="Rithik"
-                    className="h-full w-full object-cover"
-                  />
-                </motion.span>
-              )}
-            </AnimatePresence>
+            <motion.span
+              initial={false}
+              animate={{
+                opacity: scrolled ? 1 : 0,
+                scale: scrolled ? 1 : 0.6,
+              }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: scrolled ? 0.3 : 0 }}
+              className="relative block h-9 w-9 rounded-full overflow-hidden ring-2 ring-gold/60"
+            >
+              <img
+                src={portrait}
+                alt="Rithik"
+                className="h-full w-full object-cover"
+              />
+            </motion.span>
             <motion.span
               initial={false}
               animate={{ opacity: scrolled ? 1 : 0, x: scrolled ? 0 : -8 }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: scrolled ? 0.5 : 0 }}
               className="text-gold text-lg tracking-tight"
             >
               Rithik
