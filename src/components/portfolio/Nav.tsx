@@ -14,7 +14,9 @@ const links = [
 
 
 export function Nav() {
-  const scrolled = useScrolled(600);
+  const nameVisible = useScrolled(250);
+  const picVisible = useScrolled(700);
+  const scrolled = nameVisible;
   const [open, setOpen] = useState(false);
 
   return (
@@ -36,22 +38,24 @@ export function Nav() {
             <motion.span
               initial={false}
               animate={{
-                opacity: scrolled ? 1 : 0,
-                scale: scrolled ? 1 : 0.6,
+                opacity: picVisible ? 1 : 0,
+                scale: picVisible ? 1 : 0.6,
+                width: picVisible ? 36 : 0,
+                marginRight: picVisible ? 8 : 0,
               }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: scrolled ? 0.3 : 0 }}
-              className="relative block h-9 w-9 rounded-full overflow-hidden ring-2 ring-gold/60"
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="relative block h-9 rounded-full overflow-hidden ring-2 ring-gold/60"
             >
               <img
                 src={portrait}
                 alt="Rithik"
-                className="h-full w-full object-cover"
+                className="h-9 w-9 object-cover"
               />
             </motion.span>
             <motion.span
               initial={false}
-              animate={{ opacity: scrolled ? 1 : 0, x: scrolled ? 0 : -8 }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: scrolled ? 0.5 : 0 }}
+              animate={{ opacity: nameVisible ? 1 : 0, x: nameVisible ? 0 : -8 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
               className="text-gold text-lg tracking-tight"
             >
               Rithik
