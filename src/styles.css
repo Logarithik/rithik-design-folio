@@ -30,10 +30,10 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-indigo: var(--indigo);
-  --color-violet: var(--violet);
-  --color-cyan: var(--cyan);
-  --color-pink: var(--pink);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-deep: var(--gold-deep);
+
   --font-display: "Poppins", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
