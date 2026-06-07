@@ -14,15 +14,8 @@ const links = [
 
 
 export function Nav() {
-  const [scrolled, setScrolled] = useState(false);
+  const scrolled = useScrolled(120);
   const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    onScroll();
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   return (
     <motion.header
@@ -39,20 +32,30 @@ export function Nav() {
             scrolled ? "glass-strong shadow-soft" : ""
           }`}
         >
-          <a
-            href="#hero"
-            className={`flex items-center gap-2 font-display font-semibold transition-all duration-500 ease-out ${
-              scrolled ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6 pointer-events-none"
-            }`}
-          >
-            <span className="relative grid h-9 w-9 place-items-center rounded-full bg-aurora p-[2px]">
-              <img
-                src={portrait}
-                alt="Rithik"
-                className="h-full w-full rounded-full object-cover"
-              />
-            </span>
-            <span className="text-gold text-lg tracking-tight">Rithik</span>
+          <a href="#hero" className="flex items-center gap-2 font-display font-semibold min-h-9">
+            <AnimatePresence>
+              {scrolled && (
+                <motion.span
+                  layoutId="profile-portrait"
+                  className="relative block h-9 w-9 rounded-full overflow-hidden ring-2 ring-gold/60"
+                  transition={{ type: "spring", stiffness: 180, damping: 24 }}
+                >
+                  <img
+                    src={portrait}
+                    alt="Rithik"
+                    className="h-full w-full object-cover"
+                  />
+                </motion.span>
+              )}
+            </AnimatePresence>
+            <motion.span
+              initial={false}
+              animate={{ opacity: scrolled ? 1 : 0, x: scrolled ? 0 : -8 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="text-gold text-lg tracking-tight"
+            >
+              Rithik
+            </motion.span>
           </a>
 
           <nav className="hidden md:flex items-center gap-1">
