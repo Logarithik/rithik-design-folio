@@ -1,6 +1,7 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, Star } from "lucide-react";
 import portrait from "@/assets/rithik-portrait.jpg";
+import { useScrolled } from "@/hooks/use-scrolled";
 
 const tags = ["#Branding", "#UI/UX Design", "#Fullstack Developer", "#Web Designer"];
 
@@ -21,6 +22,7 @@ const testimonials = [
 ];
 
 export function Hero() {
+  const scrolled = useScrolled(120);
   return (
     <section id="hero" className="relative min-h-screen pt-28 pb-12">
       <div className="mx-auto max-w-7xl px-5">
@@ -52,11 +54,17 @@ export function Hero() {
             className="relative rounded-2xl overflow-hidden glass-strong p-2"
           >
             <div className="aspect-square w-full rounded-xl overflow-hidden grid-bg">
-              <img
-                src={portrait}
-                alt="Rithik portrait"
-                className="h-full w-full object-cover"
-              />
+              <AnimatePresence>
+                {!scrolled && (
+                  <motion.img
+                    layoutId="profile-portrait"
+                    src={portrait}
+                    alt="Rithik portrait"
+                    className="h-full w-full object-cover"
+                    transition={{ type: "spring", stiffness: 180, damping: 24 }}
+                  />
+                )}
+              </AnimatePresence>
             </div>
           </motion.div>
 
