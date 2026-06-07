@@ -1,89 +1,103 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowUpRight, Star } from "lucide-react";
+import portrait from "@/assets/rithik-portrait.jpg";
+
+const tags = ["#Branding", "#UI/UX Design", "#Development", "#Web Design"];
+
+const testimonials = [
+  {
+    quote:
+      "Navigating the portfolio feels natural — everything aligned and easy to use.",
+  },
+  {
+    quote: "Rithik captured our vision, turning it into a polished website.",
+  },
+  {
+    quote: "The experience feels smooth, fast — exactly how a portfolio should be.",
+  },
+  {
+    quote: "Portfolio navigation feels effortless — everything aligned perfectly.",
+  },
+];
 
 export function Hero() {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center pt-32 pb-20">
-      <div className="mx-auto max-w-4xl px-5 text-center w-full">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs text-muted-foreground"
-        >
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan opacity-75" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-cyan" />
-          </span>
-          Available for new projects · 2026
-        </motion.div>
-
+    <section id="hero" className="relative min-h-screen pt-28 pb-12">
+      <div className="mx-auto max-w-7xl px-5">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="mt-6 text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05]"
+          transition={{ duration: 0.7 }}
+          className="text-center font-display font-extrabold tracking-tight leading-[0.95] text-[18vw] md:text-[12rem] lg:text-[14rem]"
         >
-          <span className="block">Hi, I&apos;m Rithik —</span>
-          <span className="block text-gradient">UI/UX Designer</span>
-          <span className="block">
-            & <span className="text-gradient-bp">Full Stack Developer</span>
-          </span>
+          <span className="text-foreground">RITHIK</span>
         </motion.h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.25 }}
-          className="mt-6 mx-auto max-w-xl text-lg text-muted-foreground"
-        >
-          I craft elegant digital experiences and ship production-grade web apps —
-          blending pixel-perfect design with scalable engineering. Currently obsessed
-          with motion, design systems, and AI-native interfaces.
-        </motion.p>
-
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-8 flex flex-wrap justify-center items-center gap-3"
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-6 flex flex-wrap justify-center gap-x-10 gap-y-3 text-sm md:text-base text-muted-foreground"
         >
-          <a
-            href="#projects"
-            className="group inline-flex items-center gap-2 rounded-xl bg-aurora px-6 py-3 text-sm font-medium text-white shadow-elegant hover:opacity-95 transition"
-          >
-            View Projects
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </a>
-          <a
-            href="#resume"
-            className="inline-flex items-center gap-2 rounded-xl glass px-6 py-3 text-sm font-medium hover:bg-white/10 transition"
-          >
-            <Download className="h-4 w-4" />
-            Download Resume
-          </a>
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 rounded-xl border border-white/10 px-6 py-3 text-sm font-medium hover:bg-white/5 transition"
-          >
-            Contact Me
-          </a>
+          {tags.map((t) => (
+            <span key={t}>{t}</span>
+          ))}
         </motion.div>
 
+        <div className="mt-14 grid md:grid-cols-2 gap-10 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="relative rounded-3xl overflow-hidden glass-strong p-2"
+          >
+            <div className="aspect-[4/3] w-full rounded-2xl overflow-hidden grid-bg">
+              <img
+                src={portrait}
+                alt="Rithik portrait"
+                className="h-full w-full object-cover"
+              />
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.4 }}
+          >
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              Welcome to my portfolio! I&apos;m Rithik, a UI/UX designer &
+              full stack developer with years of experience. I craft visually
+              stunning, functional websites that deliver exceptional user
+              experiences.
+            </p>
+
+            <a
+              href="#contact"
+              className="group mt-8 inline-flex items-center gap-2 rounded-xl bg-gold px-6 py-3.5 text-sm font-semibold text-black shadow-elegant hover:brightness-110 transition"
+            >
+              Start a Project Now
+              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            </a>
+          </motion.div>
+        </div>
+
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-12 grid grid-cols-3 gap-6 max-w-md mx-auto"
+          className="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-6 border-t border-white/10 pt-8"
         >
-          {[
-            { k: "5+", v: "Years experience" },
-            { k: "40+", v: "Projects shipped" },
-            { k: "20+", v: "Happy clients" },
-          ].map((s) => (
-            <div key={s.v}>
-              <div className="text-2xl font-display font-bold text-gradient">{s.k}</div>
-              <div className="text-xs text-muted-foreground mt-1">{s.v}</div>
+          {testimonials.map((t, i) => (
+            <div key={i} className="space-y-2">
+              <div className="flex gap-0.5 text-gold">
+                {Array.from({ length: 5 }).map((_, j) => (
+                  <Star key={j} className="h-3.5 w-3.5 fill-current" />
+                ))}
+              </div>
+              <p className="text-xs text-muted-foreground italic leading-relaxed">
+                &ldquo;{t.quote}&rdquo;
+              </p>
             </div>
           ))}
         </motion.div>
