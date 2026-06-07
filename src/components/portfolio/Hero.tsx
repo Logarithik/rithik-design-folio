@@ -44,14 +44,14 @@ export function Hero() {
           ))}
         </motion.div>
 
-        <div className="mt-14 grid md:grid-cols-2 gap-10 items-center">
+        <div className="mt-14 grid md:grid-cols-[1fr_1.6fr] gap-8 md:gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="relative rounded-3xl overflow-hidden glass-strong p-2"
+            className="relative rounded-2xl overflow-hidden glass-strong p-2"
           >
-            <div className="aspect-[4/3] w-full rounded-2xl overflow-hidden grid-bg">
+            <div className="aspect-square w-full rounded-xl overflow-hidden grid-bg">
               <img
                 src={portrait}
                 alt="Rithik portrait"
@@ -65,7 +65,7 @@ export function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
           >
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl">
               Welcome to my portfolio! I&apos;m Rithik, a UI/UX designer &
               full stack developer with years of experience. I craft visually
               stunning, functional websites that deliver exceptional user
@@ -74,13 +74,14 @@ export function Hero() {
 
             <a
               href="#contact"
-              className="group mt-8 inline-flex items-center gap-2 rounded-xl bg-gold px-6 py-3.5 text-sm font-semibold text-black shadow-elegant hover:brightness-110 transition"
+              className="group mt-6 inline-flex items-center gap-2 rounded-xl bg-gold px-6 py-3 text-sm font-semibold text-black shadow-elegant hover:brightness-110 transition"
             >
               Start a Project Now
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </a>
           </motion.div>
         </div>
+
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
