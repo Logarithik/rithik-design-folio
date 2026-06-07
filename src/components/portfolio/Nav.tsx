@@ -3,12 +3,13 @@ import { motion } from "framer-motion";
 import portrait from "@/assets/rithik-portrait.jpg";
 
 const links = [
-  { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
-  { href: "#projects", label: "Projects" },
-  { href: "#resume", label: "Resume" },
-  { href: "#contact", label: "Contact" },
+  { href: "#hero", label: "HOME" },
+  { href: "#about", label: "ABOUT" },
+  { href: "#skills", label: "SERVICES" },
+  { href: "#projects", label: "PROJECTS" },
+  { href: "#contact", label: "CONTACT" },
 ];
+
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
