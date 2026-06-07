@@ -39,8 +39,8 @@ export function Nav() {
         >
           <a
             href="#hero"
-            className={`flex items-center gap-2 font-display font-semibold transition-all duration-300 ${
-              scrolled ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-2 pointer-events-none"
+            className={`flex items-center gap-2 font-display font-semibold transition-all duration-500 ease-out ${
+              scrolled ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6 pointer-events-none"
             }`}
           >
             <span className="relative grid h-9 w-9 place-items-center rounded-full bg-aurora p-[2px]">
