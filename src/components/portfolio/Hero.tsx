@@ -22,6 +22,7 @@ const testimonials = [
 ];
 
 export function Hero() {
+  const scrolled = useScrolled(120);
   return (
     <section id="hero" className="relative min-h-screen pt-28 pb-12">
       <div className="mx-auto max-w-7xl px-5">
