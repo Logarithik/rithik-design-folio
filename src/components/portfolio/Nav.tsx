@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import portrait from "@/assets/rithik-portrait.jpg";
+import { useScrolled } from "@/hooks/use-scrolled";
 
 const links = [
   { href: "#hero", label: "HOME" },
@@ -9,6 +10,7 @@ const links = [
   { href: "#projects", label: "PROJECTS" },
   { href: "#contact", label: "CONTACT" },
 ];
+
 
 
 export function Nav() {
