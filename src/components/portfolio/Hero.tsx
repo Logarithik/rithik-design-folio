@@ -54,12 +54,10 @@ export function Hero() {
             className="relative rounded-2xl overflow-hidden glass-strong p-2"
           >
             <div className="aspect-square w-full rounded-xl overflow-hidden grid-bg">
-              <motion.img
+              <img
                 src={portrait}
                 alt="Rithik portrait"
                 className="h-full w-full object-cover"
-                animate={{ opacity: scrolled ? 0 : 1, y: scrolled ? -40 : 0 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
               />
             </div>
           </motion.div>
