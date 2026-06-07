@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import portrait from "@/assets/rithik-portrait.jpg";
 
 const links = [
   { href: "#about", label: "About" },
@@ -36,8 +37,12 @@ export function Nav() {
           }`}
         >
           <a href="#hero" className="flex items-center gap-2 font-display font-semibold">
-            <span className="grid h-8 w-8 place-items-center rounded-lg bg-aurora text-sm font-bold">
-              R
+            <span className="relative grid h-9 w-9 place-items-center rounded-full bg-aurora p-[2px]">
+              <img
+                src={portrait}
+                alt="Rithik"
+                className="h-full w-full rounded-full object-cover"
+              />
             </span>
             <span className="text-gradient text-lg">Rithik</span>
           </a>
