@@ -14,7 +14,7 @@ const links = [
 
 
 export function Nav() {
-  const scrolled = useScrolled(120);
+  const scrolled = useScrolled(600);
   const [open, setOpen] = useState(false);
 
   return (
