@@ -54,11 +54,17 @@ export function Hero() {
             className="relative rounded-2xl overflow-hidden glass-strong p-2"
           >
             <div className="aspect-square w-full rounded-xl overflow-hidden grid-bg">
-              <img
-                src={portrait}
-                alt="Rithik portrait"
-                className="h-full w-full object-cover"
-              />
+              <AnimatePresence>
+                {!scrolled && (
+                  <motion.img
+                    layoutId="profile-portrait"
+                    src={portrait}
+                    alt="Rithik portrait"
+                    className="h-full w-full object-cover"
+                    transition={{ type: "spring", stiffness: 180, damping: 24 }}
+                  />
+                )}
+              </AnimatePresence>
             </div>
           </motion.div>
 
