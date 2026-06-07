@@ -99,14 +99,14 @@
     letter-spacing: -0.02em;
   }
   ::selection {
-    background: color-mix(in oklab, #8B5CF6 50%, transparent);
-    color: white;
+    background: color-mix(in oklab, #C9A84C 50%, transparent);
+    color: black;
   }
 }
 
 @layer utilities {
   .text-gradient {
-    background: var(--grad-aurora);
+    background: var(--grad-gold);
     background-size: 200% 200%;
     -webkit-background-clip: text;
     background-clip: text;
@@ -114,32 +114,34 @@
     animation: gradient-shift 8s ease-in-out infinite;
   }
   .text-gradient-bp {
-    background: var(--grad-blue-purple);
+    background: var(--grad-gold);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
   .bg-aurora {
-    background: var(--grad-aurora);
+    background: var(--grad-gold);
     background-size: 200% 200%;
     animation: gradient-shift 12s ease infinite;
   }
+  .bg-gold { background-color: #C9A84C; }
+  .text-gold { color: #C9A84C; }
+  .border-gold { border-color: #C9A84C; }
   .glass {
-    background: color-mix(in oklab, white 4%, transparent);
+    background: color-mix(in oklab, white 3%, transparent);
     backdrop-filter: blur(18px) saturate(160%);
     -webkit-backdrop-filter: blur(18px) saturate(160%);
     border: 1px solid color-mix(in oklab, white 8%, transparent);
   }
   .glass-strong {
-    background: color-mix(in oklab, white 7%, transparent);
+    background: color-mix(in oklab, black 40%, transparent);
     backdrop-filter: blur(24px) saturate(180%);
     -webkit-backdrop-filter: blur(24px) saturate(180%);
-    border: 1px solid color-mix(in oklab, white 10%, transparent);
+    border: 1px solid color-mix(in oklab, #C9A84C 20%, transparent);
   }
-  .glow-violet { box-shadow: var(--glow-violet); }
-  .glow-cyan { box-shadow: var(--glow-cyan); }
-  .glow-pink { box-shadow: var(--glow-pink); }
+  .glow-gold { box-shadow: var(--glow-gold); }
   .shadow-elegant { box-shadow: var(--shadow-elegant); }
+
 
   .grid-bg {
     background-image:
