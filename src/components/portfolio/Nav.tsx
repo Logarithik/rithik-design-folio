@@ -14,7 +14,7 @@ const links = [
 
 
 export function Nav() {
-  const nameVisible = useScrolled(250);
+  const nameVisible = useScrolled(120);
   const picVisible = useScrolled(500);
   const scrolled = nameVisible;
   const [open, setOpen] = useState(false);
