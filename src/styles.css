@@ -176,3 +176,32 @@
 .animate-float { animation: float-y 6s ease-in-out infinite; }
 .animate-blob { animation: blob-drift 18s ease-in-out infinite; }
 .animate-spin-slow { animation: spin-slow 24s linear infinite; }
+
+.orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  pointer-events: none;
+  will-change: transform, opacity;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: screen;
+}
+
+@keyframes orb-life {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+  20% {
+    opacity: var(--orb-opacity, 0.25);
+    transform: translate(-50%, -50%) scale(1);
+  }
+  80% {
+    opacity: var(--orb-opacity, 0.25);
+    transform: translate(calc(-50% + var(--orb-dx, 0)), calc(-50% + var(--orb-dy, 0))) scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--orb-dx, 0)), calc(-50% + var(--orb-dy, 0))) scale(0.7);
+  }
+}
