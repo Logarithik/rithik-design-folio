@@ -3,9 +3,9 @@ import { useState } from "react";
 import { Mail, Phone, MapPin, Linkedin, Github, Twitter, Send, Dribbble } from "lucide-react";
 
 const channels = [
-  { icon: Mail, label: "Email", value: "hello@rithik.design", href: "mailto:hello@rithik.design" },
-  { icon: Phone, label: "Phone", value: "+91 98765 43210", href: "tel:+919876543210" },
-  { icon: MapPin, label: "Location", value: "Bengaluru, India", href: "#" },
+  { icon: Mail, label: "Email", value: "logarithik@gmail.com", href: "mailto:logarithik@gmail.com" },
+  { icon: Phone, label: "Phone", value: "+91 9585485091", href: "tel:+919585485091" },
+  { icon: MapPin, label: "Location", value: "Coimbatore, India", href: "#" },
 ];
 
 const socials = [
