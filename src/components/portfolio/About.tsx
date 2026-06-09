@@ -5,6 +5,11 @@ const timeline = [
   { year: "2024 — Now", role: "Senior Product Designer & Engineer", org: "Freelance / Contract", desc: "Designing & building AI-native dashboards and SaaS products end-to-end." },
   { year: "2022 — 2024", role: "Full Stack Developer", org: "TechCraft Studios", desc: "Led front-end architecture for fintech and e-commerce platforms." },
   { year: "2020 — 2022", role: "UI/UX Designer", org: "PixelForge Agency", desc: "Shipped 25+ product designs with 30% average conversion lift." },
+  { year: "1 Month", role: "Full Stack Developer Intern", org: "Accent Techno Soft, Coimbatore", bullets: [
+    "Gained hands-on experience in full stack web development using Python-based frameworks.",
+    "Worked on developing and integrating frontend and backend components for web applications.",
+    "Collaborated with the development team to build scalable and user-friendly web solutions.",
+  ]},
 ];
 
 const education = [
@@ -79,7 +84,14 @@ export function About() {
                     <div className="text-xs text-muted-foreground">{t.year}</div>
                     <div className="mt-1 font-semibold">{t.role}</div>
                     <div className="text-sm text-gradient-bp">{t.org}</div>
-                    <p className="mt-2 text-sm text-muted-foreground">{t.desc}</p>
+                    {t.desc && <p className="mt-2 text-sm text-muted-foreground">{t.desc}</p>}
+                    {t.bullets && (
+                      <ul className="mt-2 space-y-1 list-disc list-inside text-sm text-muted-foreground">
+                        {t.bullets.map((b, i) => (
+                          <li key={i}>{b}</li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                 ))}
               </div>
