@@ -53,11 +53,11 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="relative rounded-2xl overflow-hidden glass-strong p-2"
           >
-            <div className="aspect-square w-full rounded-xl overflow-hidden grid-bg">
+            <div className="aspect-[3/4] w-full rounded-xl overflow-hidden grid-bg">
               <img
                 src={portrait}
                 alt="Rithik portrait"
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover object-top"
               />
             </div>
           </motion.div>
