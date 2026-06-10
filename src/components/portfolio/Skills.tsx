@@ -101,7 +101,7 @@ export function Skills() {
             </div>
             <div className="grid sm:grid-cols-2 gap-3">
               {stack.map((s) => (
-                <SkillCard key={s.name} {...s} accent="var(--grad-cyan-blue)" />
+                <SkillCard key={s.name} {...s} accent="var(--grad-gold)" />
               ))}
             </div>
           </div>
