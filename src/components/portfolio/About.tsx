@@ -2,9 +2,6 @@ import { motion } from "framer-motion";
 import { Briefcase, GraduationCap, Download } from "lucide-react";
 
 const timeline = [
-  { year: "2024 — Now", role: "Senior Product Designer & Engineer", org: "Freelance / Contract", desc: "Designing & building AI-native dashboards and SaaS products end-to-end." },
-  { year: "2022 — 2024", role: "Full Stack Developer", org: "TechCraft Studios", desc: "Led front-end architecture for fintech and e-commerce platforms." },
-  { year: "2020 — 2022", role: "UI/UX Designer", org: "PixelForge Agency", desc: "Shipped 25+ product designs with 30% average conversion lift." },
   { year: "1 Month", role: "Full Stack Developer Intern", org: "Accent Techno Soft, Coimbatore", bullets: [
     "Gained hands-on experience in full stack web development using Python-based frameworks.",
     "Worked on developing and integrating frontend and backend components for web applications.",
