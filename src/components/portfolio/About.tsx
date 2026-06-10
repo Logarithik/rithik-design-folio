@@ -81,8 +81,7 @@ export function About() {
                     <div className="text-xs text-muted-foreground">{t.year}</div>
                     <div className="mt-1 font-semibold">{t.role}</div>
                     <div className="text-sm text-gradient-bp">{t.org}</div>
-                    {t.desc && <p className="mt-2 text-sm text-muted-foreground">{t.desc}</p>}
-                    {t.bullets && (
+                    <ul className="mt-2 space-y-1 list-disc list-inside text-sm text-muted-foreground">
                       <ul className="mt-2 space-y-1 list-disc list-inside text-sm text-muted-foreground">
                         {t.bullets.map((b, i) => (
                           <li key={i}>{b}</li>
