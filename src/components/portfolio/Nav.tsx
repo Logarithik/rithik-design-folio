@@ -18,6 +18,14 @@ export function Nav() {
   const picVisible = useScrolled(500);
   const scrolled = nameVisible;
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState<string>("#hero");
+
+  useEffect(() => {
+    const setFromHash = () => setActive(window.location.hash || "#hero");
+    setFromHash();
+    window.addEventListener("hashchange", setFromHash);
+    return () => window.removeEventListener("hashchange", setFromHash);
+  }, []);
 
   return (
     <motion.header
