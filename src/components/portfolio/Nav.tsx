@@ -75,10 +75,11 @@ export function Nav() {
               <a
                 key={l.href}
                 href={l.href}
-                className={`px-4 py-2 rounded-lg text-xs font-semibold tracking-wider transition-colors ${
-                  l.label === "HOME"
-                    ? "text-gold"
-                    : "text-muted-foreground hover:text-foreground"
+                onClick={() => setActive(l.href)}
+                className={`px-4 py-2 rounded-lg text-xs font-semibold tracking-wider transition-colors hover:bg-gold/15 hover:text-gold ${
+                  active === l.href
+                    ? "text-gold bg-gold/10"
+                    : "text-muted-foreground"
                 }`}
               >
                 {l.label}
