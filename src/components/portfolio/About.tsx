@@ -10,8 +10,8 @@ const timeline = [
 ];
 
 const education = [
-  { year: "2018 — 2022", degree: "B.Tech, Computer Science", org: "University of Technology" },
-  { year: "2022", degree: "Google UX Design Certificate", org: "Coursera" },
+  { year: "2023 — 2027", degree: "B.Tech, Computer Science and Business System", org: "KGISL Institute of Technology" },
+  { year: "2022 — 2023", degree: "12th", org: "Sree Dharmasastha Matriculation Higher Secondary School" },
 ];
 
 export function About() {
