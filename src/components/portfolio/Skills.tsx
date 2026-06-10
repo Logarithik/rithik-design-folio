@@ -73,7 +73,7 @@ export function Skills() {
           <div className="rounded-3xl glass-strong p-7 shadow-soft">
             <div className="flex items-center gap-3 mb-6">
               <span className="grid h-10 w-10 place-items-center rounded-xl"
-                style={{ background: "var(--grad-purple-pink)" }}>
+                style={{ background: "var(--grad-gold)" }}>
                 <span className="text-lg">🎨</span>
               </span>
               <div>
@@ -83,7 +83,7 @@ export function Skills() {
             </div>
             <div className="grid sm:grid-cols-2 gap-3">
               {design.map((s) => (
-                <SkillCard key={s.name} {...s} accent="var(--grad-purple-pink)" />
+                <SkillCard key={s.name} {...s} accent="var(--grad-gold)" />
               ))}
             </div>
           </div>
@@ -91,7 +91,7 @@ export function Skills() {
           <div className="rounded-3xl glass-strong p-7 shadow-soft">
             <div className="flex items-center gap-3 mb-6">
               <span className="grid h-10 w-10 place-items-center rounded-xl"
-                style={{ background: "var(--grad-cyan-blue)" }}>
+                style={{ background: "var(--grad-gold)" }}>
                 <span className="text-lg">⚡</span>
               </span>
               <div>
