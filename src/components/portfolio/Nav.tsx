@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import portrait from "@/assets/rithik-portrait.jpg";
 import { useScrolled } from "@/hooks/use-scrolled";
