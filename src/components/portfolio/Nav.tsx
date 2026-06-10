@@ -58,7 +58,7 @@ export function Nav() {
               transition={{ duration: 0.6, ease: "easeOut" }}
               className="text-gold text-lg tracking-tight"
             >
-              Rithik
+              LOGARITHIK T
             </motion.span>
           </a>
 
