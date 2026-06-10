@@ -35,14 +35,14 @@ function SkillCard({ name, level, accent }: { name: string; level: number; accen
         <span className="font-medium">{name}</span>
         <span className="text-xs text-muted-foreground">{level}%</span>
       </div>
-      <div className="mt-3 h-1.5 rounded-full bg-white/10 overflow-hidden">
+      <div className="mt-3 h-2 rounded-full bg-white/10 overflow-hidden">
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: `${level}%` }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 1.1, ease: "easeOut" }}
           className="h-full rounded-full"
-          style={{ background: accent }}
+          style={{ background: accent, width: `${level}%` }}
         />
       </div>
     </motion.div>
