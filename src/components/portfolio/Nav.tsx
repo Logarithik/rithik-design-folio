@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import portrait from "@/assets/rithik-portrait.jpg";
 import { useScrolled } from "@/hooks/use-scrolled";
@@ -18,6 +18,14 @@ export function Nav() {
   const picVisible = useScrolled(500);
   const scrolled = nameVisible;
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState<string>("#hero");
+
+  useEffect(() => {
+    const setFromHash = () => setActive(window.location.hash || "#hero");
+    setFromHash();
+    window.addEventListener("hashchange", setFromHash);
+    return () => window.removeEventListener("hashchange", setFromHash);
+  }, []);
 
   return (
     <motion.header
@@ -67,10 +75,11 @@ export function Nav() {
               <a
                 key={l.href}
                 href={l.href}
-                className={`px-4 py-2 rounded-lg text-xs font-semibold tracking-wider transition-colors ${
-                  l.label === "HOME"
-                    ? "text-gold"
-                    : "text-muted-foreground hover:text-foreground"
+                onClick={() => setActive(l.href)}
+                className={`px-4 py-2 rounded-lg text-xs font-semibold tracking-wider transition-colors hover:bg-gold/15 hover:text-gold ${
+                  active === l.href
+                    ? "text-gold bg-gold/10"
+                    : "text-muted-foreground"
                 }`}
               >
                 {l.label}
