@@ -84,6 +84,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:description", content: "Premium portfolio of Rithik — UI/UX designer & full stack developer." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Rithik — UI/UX Designer & Full Stack Developer" },
+      { name: "twitter:description", content: "Premium portfolio of Rithik — UI/UX designer & full stack developer." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/06c2489b-b878-433c-9cbc-bf9271895ef6/id-preview-ec7c36ce--5fd045fb-5c7e-48af-8924-0125466ca50c.lovable.app-1781070679653.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/06c2489b-b878-433c-9cbc-bf9271895ef6/id-preview-ec7c36ce--5fd045fb-5c7e-48af-8924-0125466ca50c.lovable.app-1781070679653.png" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
