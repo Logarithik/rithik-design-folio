@@ -17,6 +17,15 @@ const socials = [
 
 export function Contact() {
   const [sent, setSent] = useState(false);
+  const [copied, setCopied] = useState<string | null>(null);
+
+  const handleCopy = async (label: string, value: string) => {
+    try {
+      await navigator.clipboard.writeText(value);
+      setCopied(label);
+      setTimeout(() => setCopied((c) => (c === label ? null : c)), 1500);
+    } catch {}
+  };
 
   return (
     <section id="contact" className="relative py-28">
