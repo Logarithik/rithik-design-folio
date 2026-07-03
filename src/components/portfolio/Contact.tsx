@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Mail, Phone, MapPin, Linkedin, Github, Twitter, Send, Dribbble } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Github, Twitter, Send, Dribbble, Copy, Check } from "lucide-react";
 
 const channels = [
-  { icon: Mail, label: "Email", value: "logarithik@gmail.com", href: "mailto:logarithik@gmail.com" },
-  { icon: Phone, label: "Phone", value: "+91 9585485091", href: "tel:+919585485091" },
-  { icon: MapPin, label: "Location", value: "Coimbatore, India", href: "#" },
+  { icon: Mail, label: "Email", value: "logarithik@gmail.com", href: "mailto:logarithik@gmail.com", copy: "logarithik@gmail.com" },
+  { icon: Phone, label: "Phone", value: "+91 9585485091", href: "tel:+919585485091", copy: "+91 9585485091" },
+  { icon: MapPin, label: "Location", value: "Coimbatore, India", href: "#", copy: null as string | null },
 ];
 
 const socials = [
