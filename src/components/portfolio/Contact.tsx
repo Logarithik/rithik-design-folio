@@ -33,7 +33,7 @@ export function Contact() {
             Let&apos;s build something <span className="text-gradient">remarkable</span>
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Have a project in mind, a role to fill, or just want to say hi? My inbox is open.
+            Let's build something impactful together. Whether it's a career opportunity, collaboration, or an innovative project, I'd be glad to connect.
           </p>
         </motion.div>
 
