@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Mail, Phone, MapPin, Linkedin, Github, Twitter, Send, Dribbble } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Github, Twitter, Send, Dribbble, Copy, Check } from "lucide-react";
 
 const channels = [
-  { icon: Mail, label: "Email", value: "logarithik@gmail.com", href: "mailto:logarithik@gmail.com" },
-  { icon: Phone, label: "Phone", value: "+91 9585485091", href: "tel:+919585485091" },
-  { icon: MapPin, label: "Location", value: "Coimbatore, India", href: "#" },
+  { icon: Mail, label: "Email", value: "logarithik@gmail.com", href: "mailto:logarithik@gmail.com", copy: "logarithik@gmail.com" },
+  { icon: Phone, label: "Phone", value: "+91 9585485091", href: "tel:+919585485091", copy: "+91 9585485091" },
+  { icon: MapPin, label: "Location", value: "Coimbatore, India", href: "#", copy: null as string | null },
 ];
 
 const socials = [
@@ -17,6 +17,15 @@ const socials = [
 
 export function Contact() {
   const [sent, setSent] = useState(false);
+  const [copied, setCopied] = useState<string | null>(null);
+
+  const handleCopy = async (label: string, value: string) => {
+    try {
+      await navigator.clipboard.writeText(value);
+      setCopied(label);
+      setTimeout(() => setCopied((c) => (c === label ? null : c)), 1500);
+    } catch {}
+  };
 
   return (
     <section id="contact" className="relative py-28">
@@ -83,19 +92,30 @@ export function Contact() {
           >
             <div className="rounded-3xl glass-strong p-7 space-y-4">
               {channels.map((c) => (
-                <a
+                <div
                   key={c.label}
-                  href={c.href}
                   className="flex items-center gap-4 rounded-2xl p-3 -m-3 hover:bg-white/5 transition"
                 >
-                  <span className="grid h-11 w-11 place-items-center rounded-xl bg-aurora">
-                    <c.icon className="h-4 w-4 text-white" />
-                  </span>
-                  <div>
-                    <div className="text-xs uppercase tracking-wider text-muted-foreground">{c.label}</div>
-                    <div className="text-sm font-medium">{c.value}</div>
-                  </div>
-                </a>
+                  <a href={c.href} className="flex items-center gap-4 flex-1 min-w-0">
+                    <span className="grid h-11 w-11 place-items-center rounded-xl bg-aurora shrink-0">
+                      <c.icon className="h-4 w-4 text-white" />
+                    </span>
+                    <div className="min-w-0">
+                      <div className="text-xs uppercase tracking-wider text-muted-foreground">{c.label}</div>
+                      <div className="text-sm font-medium truncate">{c.value}</div>
+                    </div>
+                  </a>
+                  {c.copy && (
+                    <button
+                      type="button"
+                      onClick={() => handleCopy(c.label, c.copy!)}
+                      aria-label={`Copy ${c.label}`}
+                      className="grid h-8 w-8 place-items-center rounded-lg border border-white/10 text-muted-foreground hover:text-foreground hover:bg-white/5 transition shrink-0"
+                    >
+                      {copied === c.label ? <Check className="h-3.5 w-3.5 text-gold" /> : <Copy className="h-3.5 w-3.5" />}
+                    </button>
+                  )}
+                </div>
               ))}
             </div>
 
