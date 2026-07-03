@@ -24,13 +24,10 @@ const stack = [
 function SkillCard({ name, level, accent }: { name: string; level: number; accent: string }) {
   return (
     <motion.div
-      whileHover={{ y: -4 }}
-      className="group relative rounded-2xl glass p-5 hover:bg-white/[0.07] transition-all"
+      whileHover={{ scale: 1.04, y: -2 }}
+      transition={{ type: "spring", stiffness: 260, damping: 20 }}
+      className="group relative rounded-2xl glass p-5 border border-white/10 hover:border-gold/30 hover:bg-white/[0.04] hover:shadow-[0_8px_24px_-12px_rgba(212,175,55,0.25)] transition-all duration-300"
     >
-      <div
-        className="absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity blur-md -z-10"
-        style={{ background: accent }}
-      />
       <div className="flex items-center justify-between">
         <span className="font-medium">{name}</span>
         <span className="text-xs text-muted-foreground">{level}%</span>
